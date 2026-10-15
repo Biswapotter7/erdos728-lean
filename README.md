@@ -1,6 +1,6 @@
 # Erdős Problem 728 in Lean
 
-A local, reproducible Lean project for the logarithmic-window formulation of
+A reproducible Lean project for the logarithmic-window formulation of
 [Erdős Problem 728](https://www.erdosproblems.com/728).
 
 For every real `0 < C₁ < C₂` and `0 < ε < 1/2`, the main theorem proves that
@@ -16,10 +16,12 @@ The declaration is `Erdos728.erdos_728` in `Erdos728/Main.lean`. The logarithm
 is the natural logarithm. Factorials and subtraction are on natural numbers;
 inequalities involving logarithms are on real numbers with explicit coercions.
 
-**Verified locally:** the complete build and all eight axiom audits passed
-with Lean 4.24.0. See [VERIFICATION.txt](VERIFICATION.txt) for actual compiler
-output, the theorem type, and source checksums. The project Lean sources contain
-no `sorry`, `admit`, or `native_decide`.
+**Verified locally and on GitHub Actions:** the complete build, all eight axiom
+audits, and 3,321 arithmetic checks passed with Lean 4.24.0. The
+[first successful CI run](https://github.com/Biswapotter7/erdos728-lean/actions/runs/38721976399)
+checked proof commit `d793e39`. See [VERIFICATION.txt](VERIFICATION.txt) for
+local compiler output, the theorem type, and source checksums. The project
+Lean sources contain no `sorry`, `admit`, or `native_decide`.
 
 ## Run it
 
@@ -71,8 +73,11 @@ exact-integer Python checks of the algebraic reduction. The numerical checks
 are supplementary; they do not establish the infinitude theorem.
 
 Generated version, build, axiom, and arithmetic logs go into `artifacts/`.
-`.github/workflows/lean.yml` runs the same verification if this local repository
-is later hosted on GitHub. It has not been run on hosted CI as part of local setup.
+`.github/workflows/lean.yml` runs the same verification on every push and pull
+request and supports manual runs. Each run uploads its logs as the
+`lean-verification` artifact. View the
+[verification runs](https://github.com/Biswapotter7/erdos728-lean/actions/workflows/lean.yml)
+for the current GitHub status.
 
 ## Provenance and proof structure
 
