@@ -78,6 +78,8 @@ request and supports manual runs. Each run uploads its logs as the
 `lean-verification` artifact. View the
 [verification runs](https://github.com/Biswapotter7/erdos728-lean/actions/workflows/lean.yml)
 for the current GitHub status.
+CI runs on Ubuntu 24.04; the checkout and artifact-upload actions use Node 24
+and are pinned to release commit SHAs.
 
 ## Provenance and proof structure
 
