@@ -1,0 +1,9 @@
+.lake/
+.tools/
+artifacts/
+__pycache__/
+.env*
+*.pem
+*.key
+.agents/
+.codex/

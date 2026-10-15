@@ -1,0 +1,48 @@
+Erdos Problem 728: local verification record
+Completed (UTC): 2026-10-15T10:39:53+00:00
+Command: bash scripts/verify.sh
+Exit status: 0
+
+Compiler:
+Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)
+
+Build:
+ℹ [7351/7357] Replayed Erdos728.Upstream.Erdos728b
+info: Erdos728/Upstream/Erdos728b.lean:1416:0: 'Erdos728b.erdos_728' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Erdos728/Upstream/Erdos728b.lean:1419:0: 'Erdos728b.erdos_728_fc' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [7354/7357] Built Erdos728.Main (4.7s)
+Build completed successfully (7357 jobs).
+
+Axiom audit:
+Erdos728.erdos_728 (C₁ C₂ ε : ℝ) (h₁ : 0 < C₁) (h₁₂ : C₁ < C₂) (hε : 0 < ε) (hε' : ε < 1 / 2) :
+  {t |
+      ε * ↑t.2.2 ≤ ↑t.1 ∧
+        ε * ↑t.2.2 ≤ ↑t.2.1 ∧
+          ↑t.1 ≤ (1 - ε) * ↑t.2.2 ∧
+            ↑t.2.1 ≤ (1 - ε) * ↑t.2.2 ∧
+              t.1.factorial * t.2.1.factorial ∣ t.2.2.factorial * (t.1 + t.2.1 - t.2.2).factorial ∧
+                C₁ * Real.log ↑t.2.2 < ↑(t.1 + t.2.1 - t.2.2) ∧ ↑(t.1 + t.2.1 - t.2.2) < C₂ * Real.log ↑t.2.2}.Infinite
+'Erdos728.erdos_728' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.exists_windowTriple_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.window_n_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.window_gap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.window_nontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.factorial_dvd_iff_choose_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728.interval_valuation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos728b.erdos_728_fc' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Supplementary exact arithmetic:
+Passed 3321 exact-integer checks of the factorial/binomial equivalence.
+Example: choose(28,14) / choose(21,7) = 345.
+
+SHA-256 of verified Lean and dependency configuration files:
+240eda7dba4dddf1ef91c15b3ba4ec0a582b6d8215296308c93b48986d65fcb9  Erdos728/Algebra.lean
+caaa429f172df4b2d929271a8d8fac89c5d2e8100baf8d8f37e30d09480ddc2b  Erdos728/Interval.lean
+11c36c6025ff12a5fe6bec2a91badfb69ed9a7b886cb1205d936972f51313890  Erdos728/Main.lean
+e7977178d89137ef8c9c634e3a8581aa18f078bf2256dfb609fbdc5791662c62  Erdos728/Sanity.lean
+40f4cbf2ccaefa5d84fc44ece63d1e4c3fed3e47b631057ef337fc92465d7b9f  Erdos728/Upstream/Erdos728b.lean
+0b631b373318d49e84851b93d5bc1708868a6d968e1418aa93aae85213b1e5d2  Erdos728.lean
+4b19da649e202a56b030da67b0dad5f5c61d5203ef4fd91ba507a1df8e9e3f27  Audit.lean
+42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434  lean-toolchain
+7d6c8d1abab36ebd59f31b90656e2e3c839cd5ec0e1e58d134c626b84f75cf71  lakefile.toml
+ca7fb1fac63a8c900af689d50279eb907faba460453f407b8b47f1539390d31b  lake-manifest.json
